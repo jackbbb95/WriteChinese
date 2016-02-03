@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Characters</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_a_word">Add A Word</string>
+    <string name="add_a_catagory">Add A Catagory</string>
+    <string name="title">Title</string>
+</resources>
