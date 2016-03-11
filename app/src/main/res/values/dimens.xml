@@ -3,7 +3,21 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="abc_text_size_small">14sp</dimen>
 
     <dimen name="abc_dialog_padding_top">18dp</dimen>
     <dimen name="abc_dialog_padding">24dp</dimen>
+
+    <dimen name="card_padding_vertical">8dp</dimen>
+    <dimen name="card_padding_horizontal">4dp</dimen>
+    <dimen name="dialog_vertical_spacing">14dp</dimen>
+
+    <dimen name="abc_text_size_medium">18sp</dimen>
+    <dimen name="abc_text_size_large">22sp</dimen>
+    <dimen name="abc_text_size_large_dp">22sp</dimen>
+    <dimen name="abc_text_size_extra_large">42sp</dimen>
+    <dimen name="character_dialog_padding_top">25dp</dimen>
+
+    <dimen name="abc_action_bar_default_height">?android:attr/actionBarSize</dimen>
+    <dimen name="abc_text_size_headline">24sp</dimen>
 </resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="@dimen/abc_action_bar_default_height"
+    android:layout_width="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/header"
+        android:textSize="@dimen/abc_text_size_headline"
+        android:layout_marginBottom="@dimen/abc_dialog_padding_top"
+        android:gravity="start|center_vertical"
+        android:textColor="@android:color/primary_text_light"
+        android:fontFamily="sans-serif"
+        android:layout_marginLeft="@dimen/abc_dialog_padding"
+        android:layout_marginStart="@dimen/abc_dialog_padding"
+        android:paddingTop="@dimen/abc_dialog_padding_top" />
+</FrameLayout>

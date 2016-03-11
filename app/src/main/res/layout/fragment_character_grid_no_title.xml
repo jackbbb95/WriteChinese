@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="@dimen/card_padding_horizontal"
+    android:paddingRight="@dimen/card_padding_horizontal"
+    android:paddingTop="@dimen/card_padding_vertical"
+    tools:context=".ActivitiesAndFragments.CharacterGridFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/empty_characters_text"
+        android:gravity="center"
+        android:text="@string/empty_list_chars"/>
+
+    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_marginTop="?actionBarSize"
+        android:id="@+id/grid_item"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>

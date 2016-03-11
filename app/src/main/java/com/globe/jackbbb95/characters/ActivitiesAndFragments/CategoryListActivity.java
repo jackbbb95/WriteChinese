@@ -1,9 +1,8 @@
-package com.globe.jackbbb95.characters;
+package com.globe.jackbbb95.characters.ActivitiesAndFragments;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,20 +10,36 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class ListActivity extends AppCompatActivity {
+import com.globe.jackbbb95.characters.Dialogs.AboutDialog;
+import com.globe.jackbbb95.characters.Dialogs.AddCategoryDialog;
+import com.globe.jackbbb95.characters.R;
+
+//The activity that holds the different sets of characters
+public class CategoryListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(R.string.app_name);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.hide();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                fab.show();
+            }
+        }, 600);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showAddCatagoryDialog();
+                showAddCategoryDialog();
             }
         });
     }
@@ -38,24 +53,24 @@ public class ListActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.about) {
+            showAboutDialog();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
 
-    public void showAddCatagoryDialog() {
+    private void showAddCategoryDialog() {
         FragmentTransaction fm = getSupportFragmentManager().beginTransaction();
-        AddCatagoryDialog addCatagoryDialog = new AddCatagoryDialog();
-        addCatagoryDialog.show(fm, "add_catagory");
+        AddCategoryDialog addCategoryDialog = new AddCategoryDialog();
+        addCategoryDialog.show(fm, "add_category");
     }
 
+    private void showAboutDialog() {
+        FragmentTransaction fm = getSupportFragmentManager().beginTransaction();
+        AboutDialog aboutDialog = new AboutDialog();
+        aboutDialog.show(fm, "about_dialog");
+    }
 }
