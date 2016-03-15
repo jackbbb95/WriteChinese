@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.globe.jackbbb95.characters"
+        applicationId "com.globe.jackbbb95.writechinese"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1

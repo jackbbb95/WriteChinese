@@ -20,25 +20,28 @@ public class CharacterGrid extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        try {
+            final int categoryIndex = getIntent().getIntExtra("CategoryIndex", -1);
+            ArrayList<CategoryObject> list = CategoryListActivityFragment.getCategoryList();
+            CategoryObject category = list.get(categoryIndex);
 
-        final int categoryIndex = getIntent().getIntExtra("CategoryIndex", -1);
-        ArrayList<CategoryObject> list = CategoryListActivityFragment.getCategoryList();
-        CategoryObject category = list.get(categoryIndex);
-
-        setContentView(R.layout.activity_character_grid);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(category.getName());
+            setContentView(R.layout.activity_character_grid);
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setTitle(category.getName());
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showAddCharacterDialog(categoryIndex);
-            }
-        });
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    showAddCharacterDialog(categoryIndex);
+                }
+            });
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }catch(Exception e) {
+            finish();
+        }
     }
 
     private void showAddCharacterDialog(int index) {
