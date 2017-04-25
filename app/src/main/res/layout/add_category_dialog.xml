@@ -15,16 +15,16 @@
         android:id="@+id/create_catagory_title_til"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/abc_dialog_padding_top">
+        android:layout_marginTop="@dimen/general_24dp">
         <EditText
             android:id="@+id/category_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:imeOptions="actionDone"
-            android:layout_marginLeft="@dimen/abc_dialog_padding"
-            android:layout_marginRight="@dimen/abc_dialog_padding"
-            android:layout_marginEnd="@dimen/abc_dialog_padding"
-            android:layout_marginStart="@dimen/abc_dialog_padding"
+            android:layout_marginLeft="@dimen/general_24dp"
+            android:layout_marginRight="@dimen/general_24dp"
+            android:layout_marginEnd="@dimen/general_24dp"
+            android:layout_marginStart="@dimen/general_24dp"
             android:inputType="textCapWords"
             android:maxLength="30"
             android:focusable="true"/>
@@ -36,16 +36,16 @@
         android:id="@+id/create_catagory_description_til"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/abc_dialog_padding_top">
+        android:layout_marginTop="@dimen/general_24dp">
         <EditText
             android:id="@+id/category_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:imeOptions="actionDone"
-            android:layout_marginLeft="@dimen/abc_dialog_padding"
-            android:layout_marginRight="@dimen/abc_dialog_padding"
-            android:layout_marginEnd="@dimen/abc_dialog_padding"
-            android:layout_marginStart="@dimen/abc_dialog_padding"
+            android:layout_marginLeft="@dimen/general_24dp"
+            android:layout_marginRight="@dimen/general_24dp"
+            android:layout_marginEnd="@dimen/general_24dp"
+            android:layout_marginStart="@dimen/general_24dp"
             android:inputType="textCapWords"
             android:maxLength="30"
             android:focusable="true"/>
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="end"
-        android:layout_marginTop="@dimen/abc_dialog_padding_top">
+        android:layout_marginTop="@dimen/general_24dp">
         <Button
             style="@style/ButtonStyle"
             android:id="@+id/cancel_button"

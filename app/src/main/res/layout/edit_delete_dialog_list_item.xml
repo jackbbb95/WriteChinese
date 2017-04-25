@@ -3,15 +3,10 @@
     android:id="@+id/edit_dialog_item"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="start|center_vertical"
-    android:paddingLeft="@dimen/abc_dialog_padding"
-    android:paddingStart="@dimen/abc_dialog_padding"
-    android:paddingRight="@dimen/abc_dialog_padding"
-    android:paddingEnd="@dimen/abc_dialog_padding"
-    android:layout_marginBottom="@dimen/abc_dialog_padding_top"
-    android:textSize="@dimen/abc_text_size_small"
-    style="@style/AppTheme"
-    android:paddingTop="@dimen/abc_dialog_padding_top"
-    android:paddingBottom="@dimen/dialog_vertical_spacing">
+    android:gravity="start"
+    android:layout_gravity="center_vertical"
+    android:padding="@dimen/general_24dp"
+    android:textSize="@dimen/text_size_small"
+    style="@style/AppTheme">
 
 </TextView>

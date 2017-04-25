@@ -1,102 +1,85 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/card_padding_vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.globe.jackbbb95.characters.ActivitiesAndFragments.WriteActivityFragment"
-    tools:showIn="@layout/activity_write">
+    android:orientation="vertical"
+    android:id="@+id/write_top_layout">
 
-
-    <android.support.v7.widget.CardView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/write_top_card"
-        android:layout_marginTop="?actionBarSize"
-        
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        app:cardPreventCornerOverlap="false"
-        app:cardUseCompatPadding="true">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <RelativeLayout
+            android:id="@+id/left_side_top_card"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:padding="@dimen/general_8dp">
 
-            <RelativeLayout
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/write_act_char_tv"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="@dimen/text_size_extra_large"
+                android:paddingLeft="@dimen/general_16dp"
+                android:paddingRight="@dimen/general_16dp"
+                android:paddingTop="@dimen/general_8dp"
+                android:paddingBottom="@dimen/general_8dp"
+                android:text="CH"/>
 
-                <RelativeLayout
-                    android:paddingTop="@dimen/activity_vertical_margin"
-                    android:paddingBottom="@dimen/activity_vertical_margin"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"
-                    android:id="@+id/left_side_top_card"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="false"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:padding="@dimen/card_padding_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/write_act_pinyin_tv"
+                android:layout_below="@+id/write_act_char_tv"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="@dimen/text_size_medium"
+                android:paddingLeft="@dimen/general_16dp"
+                android:paddingRight="@dimen/general_16dp"
+                android:paddingTop="@dimen/general_8dp"
+                android:paddingBottom="@dimen/general_8dp"
+                android:text="PINYIN"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/write_act_char_tv"
-                        android:textColor="@android:color/primary_text_light"
-                        android:textSize="@dimen/abc_text_size_extra_large"
-                        android:paddingLeft="@dimen/activity_horizontal_margin"
-                        android:paddingRight="@dimen/activity_horizontal_margin"
-                        android:paddingTop="@dimen/card_padding_vertical"
-                        android:paddingBottom="@dimen/card_padding_vertical"/>
+            <View
+                android:id="@+id/write_divider_vert"
+                android:layout_toEndOf="@+id/write_act_char_tv"
+                android:layout_width="1dp"
+                android:layout_height="128dp"
+                android:background="#20000000"
+                android:layout_toRightOf="@+id/write_act_char_tv" />
+        </RelativeLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/write_act_pinyin_tv"
-                        android:layout_below="@+id/write_act_char_tv"
-                        android:layout_centerInParent="true"
-                        android:textColor="@android:color/primary_text_light"
-                        android:textSize="@dimen/abc_text_size_medium"
-                        android:paddingLeft="@dimen/activity_horizontal_margin"
-                        android:paddingRight="@dimen/activity_horizontal_margin"
-                        android:paddingTop="@dimen/card_padding_vertical"
-                        android:paddingBottom="@dimen/card_padding_vertical"/>
-
-                    <View
-                        android:id="@+id/write_divider_vert"
-                        android:layout_toRightOf="@+id/write_act_char_tv"
-                        android:layout_toEndOf="@+id/write_act_char_tv"
-                        android:layout_width="1dp"
-                        android:layout_height="100dp"
-                        android:background="#20000000"
-                        android:layout_marginTop="@dimen/card_padding_horizontal"
-                        android:layout_marginBottom="@dimen/card_padding_horizontal"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/right_side_top_card"
-                    android:layout_width="wrap_content"
-                    android:layout_height="124dp"
-                    android:layout_toRightOf="@+id/left_side_top_card"
-                    android:layout_toEndOf="@+id/left_side_top_card">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/definition"
-                        android:textSize="@dimen/abc_text_size_large"
-                        android:textColor="@android:color/primary_text_light"
-                        android:layout_centerVertical="true"
-                        android:paddingLeft="@dimen/activity_horizontal_margin"
-                        android:paddingRight="@dimen/activity_horizontal_margin"
-                        android:paddingTop="@dimen/card_padding_vertical"
-                        android:paddingBottom="@dimen/card_padding_vertical"/>
-                </RelativeLayout>
-
-            </RelativeLayout>
+        <FrameLayout
+            android:id="@+id/right_side_top_card"
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:layout_toRightOf="@+id/left_side_top_card"
+            android:layout_toEndOf="@+id/left_side_top_card"
+            android:layout_centerVertical="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/definition"
+                android:textSize="@dimen/text_size_large"
+                android:textColor="@android:color/primary_text_light"
+                android:layout_gravity="center"
+                android:text="DEFINITION"/>
+            <TextView
+                android:id="@+id/swipe_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:text="@string/swipe_change_characters"
+                android:textColor="@android:color/secondary_text_dark"
+                android:paddingRight="@dimen/general_8dp"
+                android:paddingEnd="@dimen/general_8dp"
+                android:paddingLeft="@dimen/general_8dp"
+                android:paddingStart="@dimen/general_8dp"
+                android:paddingBottom="@dimen/general_8dp" />
 
             <TextView
                 android:id="@+id/char_count"
@@ -104,29 +87,21 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:textColor="@android:color/secondary_text_dark"
-                android:paddingRight="@dimen/card_padding_vertical"
-                android:paddingEnd="@dimen/card_padding_vertical"
-                android:paddingLeft="@dimen/card_padding_vertical"
-                android:paddingStart="@dimen/card_padding_vertical"
-                android:paddingBottom="@dimen/card_padding_vertical"
-                android:paddingTop="@dimen/card_padding_vertical"/>
+                android:paddingRight="@dimen/general_8dp"
+                android:paddingEnd="@dimen/general_8dp"
+                android:paddingLeft="@dimen/general_8dp"
+                android:paddingStart="@dimen/general_8dp"
+                android:paddingBottom="@dimen/general_8dp"
+                android:paddingTop="@dimen/general_8dp"
+                android:text="(#/#)"/>
+        </FrameLayout>
 
+    </RelativeLayout>
 
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/swipe_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:text="@string/swipe_change_characters"
-            android:textColor="@android:color/secondary_text_dark"
-            android:paddingRight="@dimen/card_padding_vertical"
-            android:paddingEnd="@dimen/card_padding_vertical"
-            android:paddingLeft="@dimen/card_padding_vertical"
-            android:paddingStart="@dimen/card_padding_vertical"
-            android:paddingBottom="@dimen/card_padding_vertical" />
-    </android.support.v7.widget.CardView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDivider"/>
 
     <me.panavtec.drawableview.DrawableView
         android:layout_marginTop="?actionBarSize"
@@ -136,4 +111,4 @@
     </me.panavtec.drawableview.DrawableView>
 
 
-</RelativeLayout>
+</LinearLayout>

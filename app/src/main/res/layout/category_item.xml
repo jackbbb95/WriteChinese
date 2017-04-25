@@ -2,80 +2,62 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/category_layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <android.support.v7.widget.CardView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/category_card"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:paddingBottom="@dimen/general_4dp">
+    <RelativeLayout
+        android:id="@+id/title_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardPreventCornerOverlap="false"
-        app:cardUseCompatPadding="true"
-        android:foreground="?android:attr/selectableItemBackground">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <RelativeLayout
-                android:id="@+id/above_divider"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:id="@+id/category_title"
-                    android:textColor="@android:color/primary_text_light"
-                    android:padding="@dimen/card_padding_vertical"
-                    android:textSize="@dimen/abc_text_size_large"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/category_title"
-                    android:layout_toRightOf="@id/category_title"
-                    android:id="@+id/char_count_category"
-                    android:layout_centerVertical="true"
-                    android:textColor="@android:color/secondary_text_dark"
-                    android:textSize="@dimen/abc_text_size_medium"/>
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/category_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:textColor="@android:color/primary_text_light"
+            android:layout_marginTop="@dimen/general_8dp"
+            android:layout_marginLeft="@dimen/general_8dp"
+            android:layout_marginStart="@dimen/general_8dp"
+            android:layout_marginBottom="4dp"
+            android:textSize="@dimen/text_size_large"
+            android:text="TITLE"
+            />
+        <TextView
+            android:id="@+id/char_count_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/secondary_text_dark"
+            android:layout_margin="@dimen/general_8dp"
+            android:textSize="@dimen/text_size_medium"
+            android:text="##"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:id="@+id/category_description"
-                    android:textColor="@android:color/secondary_text_light"
-                    android:padding="@dimen/card_padding_vertical"
-                    android:textSize="@dimen/abc_text_size_medium"/>
+        <TextView
+            android:id="@+id/category_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/secondary_text_light"
+            android:textSize="@dimen/text_size_small"
+            android:text="SUBTITLE"
+            android:layout_marginBottom="@dimen/general_8dp"
+            android:layout_below="@+id/category_title"
+            android:layout_alignLeft="@+id/category_title"
+            android:layout_alignStart="@+id/category_title" />
 
-            </RelativeLayout>
+    </RelativeLayout>
 
-
-            <View
-                android:id="@+id/under_title_divider"
-                android:layout_below="@+id/above_divider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorDivider"
-                android:layout_marginLeft="@dimen/card_padding_horizontal"
-                android:layout_marginStart="@dimen/card_padding_horizontal"
-                android:layout_marginRight="@dimen/card_padding_horizontal"
-                android:layout_marginEnd="@dimen/card_padding_horizontal"/>
-
-            <TextView
-                android:layout_below="@+id/under_title_divider"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/abc_text_size_large_dp"
-                android:id="@+id/characters_textview"
-                android:padding="@dimen/activity_horizontal_margin"
-                android:maxLines="1"/>
-
-
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
+        <!-- Replace with Grid?? -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_large"
+        android:id="@+id/characters_textview"
+        android:padding="@dimen/general_16dp"
+        android:maxLines="1"/>
 
 </LinearLayout>

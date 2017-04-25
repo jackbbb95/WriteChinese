@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/character_item"
+    android:layout_gravity="center"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:paddingTop="@dimen/general_16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/character_card_character"
+        android:textColor="@android:color/primary_text_light"
+        android:textSize="@dimen/text_size_extra_large" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/character_card_character"
+        android:id="@+id/character_card_pinyin"
+        android:textColor="@android:color/secondary_text_light"
+        android:paddingBottom="@dimen/general_8dp"
+        android:textSize="@dimen/text_size_medium"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/character_card_pinyin"
+        android:id="@+id/character_card_def"
+        android:textColor="@android:color/secondary_text_light"
+        android:paddingBottom="@dimen/general_8dp"
+        android:textSize="@dimen/text_size_medium"/>
+</RelativeLayout>

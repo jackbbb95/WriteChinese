@@ -12,9 +12,9 @@
         android:theme="@style/AppTheme"
         android:fullBackupContent="@xml/backup_settings">
         <activity
-            android:name=".ActivitiesAndFragments.CategoryListActivity"
+            android:name=".view.activity.CategoryListActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
@@ -22,21 +22,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActivitiesAndFragments.CharacterGrid"
+            android:name=".view.activity.CharacterGridActivity"
             android:label="@string/title_activity_character_grid"
-            android:parentActivityName=".ActivitiesAndFragments.CategoryListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:parentActivityName=".view.activity.CategoryListActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
             </intent-filter>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ActivitiesAndFragments.CategoryListActivity" />
+                android:value=".view.activity.CategoryListActivity" />
         </activity>
         <activity
-            android:name=".ActivitiesAndFragments.WriteActivity"
+            android:name=".view.activity.WriteActivity"
             android:label="@string/title_activity_write"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
             </intent-filter>
