@@ -6,31 +6,38 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.globe.jackbbb95.characters.R;
+import com.globe.jackbbb95.characters.WriteChineseApp;
 import com.globe.jackbbb95.characters.dialog.AboutDialog;
 import com.globe.jackbbb95.characters.dialog.AddCategoryDialog;
-import com.globe.jackbbb95.characters.R;
 import com.globe.jackbbb95.characters.view.fragment.CategoryListFragment;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 //The activity that holds the different sets of characters
 public class CategoryListActivity extends AppCompatActivity implements AddCategoryDialog.OnAddCategoryListener {
 
     private CategoryListFragment fragment;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
+        WriteChineseApp app = (WriteChineseApp) getApplication();
+        mTracker = app.getDefaultTracker();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.app_name);
 
         fragment = new CategoryListFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,fragment,"categoryListFragment").commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment,"categoryListFragment").commit();
 
 
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -67,6 +74,12 @@ public class CategoryListActivity extends AppCompatActivity implements AddCatego
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Image~" + CategoryListActivity.class.getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
 
     private void showAddCategoryDialog() {
         FragmentTransaction fm = getSupportFragmentManager().beginTransaction();

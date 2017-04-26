@@ -5,12 +5,12 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,10 +19,10 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.globe.jackbbb95.characters.R;
 import com.globe.jackbbb95.characters.adapter.CategoryAdapter;
 import com.globe.jackbbb95.characters.dialog.EditCategoryDialog;
 import com.globe.jackbbb95.characters.model.CategoryObject;
-import com.globe.jackbbb95.characters.R;
 import com.globe.jackbbb95.characters.util.SaveUtil;
 import com.globe.jackbbb95.characters.view.activity.CharacterGridActivity;
 import com.orhanobut.dialogplus.DialogPlus;
@@ -30,7 +30,7 @@ import com.orhanobut.dialogplus.OnItemClickListener;
 
 import java.util.ArrayList;
 
-public class CategoryListFragment extends Fragment {
+public class CategoryListFragment extends BaseFragment {
 
     private static ArrayList<CategoryObject> categoryList = new ArrayList<>();
     private static CategoryAdapter categoryAdapter;
@@ -92,12 +92,11 @@ public class CategoryListFragment extends Fragment {
 
             @Override
             public void onItemLongClick(int position, View v) {
-                TextView theHeader = (TextView) header.findViewById(R.id.header);
-                TextView theSubtitle = (TextView) header.findViewById(R.id.header_subtitle);
+                Toolbar tb = (Toolbar) header.findViewById(R.id.header_toolbar);
                 final int index = position;
                 final CategoryObject category = categoryList.get(position);
-                theHeader.setText(category.getName());
-                theSubtitle.setText(category.getDescription());
+                tb.setTitle(category.getName());
+                tb.setSubtitle(category.getDescription());
 
                 ArrayAdapter<String> editOrDeleteAdapter = new ArrayAdapter<>(getActivity(), R.layout.edit_delete_dialog_list_item);
                 editOrDeleteAdapter.add("Edit");

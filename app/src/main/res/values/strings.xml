@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Write Chinese</string>
     <string name="add_characters">Add Characters</string>
-    <string name="add_a_category">Add A Category</string>
+    <string name="add_a_set">Add A Set</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="cancel">Cancel</string>
@@ -23,7 +23,7 @@
     <string name="practice">Practice</string>
     <string name="swipe_change_characters">Swipe to change</string>
     <string name="my_credits">Made by globe.</string>
-    <string name="empty_list_set">Start by adding a new Set</string>
-    <string name="empty_list_chars">Add new characters to this set</string>
+    <string name="empty_list_set">Start by adding a new set of characters</string>
+    <string name="empty_list_chars">Now add some characters to start practicing!</string>
     <string name="rate">Rate</string>
 </resources>

@@ -10,34 +10,88 @@
         android:layout_height="wrap_content"
         android:id="@+id/pen_size_tv"
         android:text="@string/pen_size"
-        android:textSize="@dimen/text_size_large"
+        android:textSize="@dimen/text_size_headline"
         android:textColor="@android:color/primary_text_light"
-        android:layout_marginTop="@dimen/general_16dp"
-        android:layout_marginBottom="@dimen/general_16dp"
-        android:layout_marginLeft="@dimen/general_16dp"
-        android:layout_marginRight="@dimen/general_16dp"/>
+        android:layout_margin="@dimen/general_16dp"/>
 
     <com.rey.material.widget.Slider
         android:id="@+id/pen_slider"
         android:layout_width="match_parent"
         android:layout_height="24dp"
         android:layout_below="@+id/pen_size_tv"
-        android:padding="@dimen/general_16dp"
+        android:layout_margin="@dimen/general_16dp"
         app:sl_primaryColor="@color/colorAccent"
         app:sl_secondaryColor="@android:color/darker_gray"
         app:sl_thumbRadius="12dp"
         app:sl_thumbFocusRadius="10dp"
-        app:sl_travelAnimDuration="5"
+        app:sl_travelAnimDuration="2"
         app:sl_minValue="1"
         app:sl_maxValue="50"
         app:sl_value="10"/>
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/show_char_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pen_slider"
+        android:layout_marginLeft="@dimen/general_16dp"
+        android:layout_marginStart="@dimen/general_16dp"
+        android:checked="true"/>
+
+    <TextView
+        android:id="@+id/show_char_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/show_char_box"
+        android:layout_toEndOf="@+id/show_char_box"
+        android:layout_alignBaseline="@+id/show_char_box"
+        android:text="Show Character"
+        style="@style/TextAppearance.AppCompat.Body1" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/show_pinyin_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/show_char_box"
+        android:layout_alignLeft="@+id/show_char_box"
+        android:layout_alignStart="@+id/show_char_box"
+        android:checked="true" />
+
+    <TextView
+        android:id="@+id/show_pinyin_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/show_pinyin_box"
+        android:layout_toEndOf="@+id/show_pinyin_box"
+        android:layout_alignBaseline="@+id/show_pinyin_box"
+        android:text="Show Pinyin"
+        style="@style/TextAppearance.AppCompat.Body1" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/show_def_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/show_pinyin_box"
+        android:layout_alignLeft="@+id/show_pinyin_box"
+        android:layout_alignStart="@+id/show_pinyin_box"
+        android:checked="true" />
+
+    <TextView
+        android:id="@+id/show_def_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/show_def_box"
+        android:layout_toEndOf="@+id/show_def_box"
+        android:layout_alignBaseline="@+id/show_def_box"
+        android:text="Show Definition"
+        style="@style/TextAppearance.AppCompat.Body1" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="end"
-        android:layout_below="@+id/pen_slider"
+        android:layout_below="@+id/show_def_tv"
         android:layout_marginTop="@dimen/general_24dp">
         <Button
             style="@style/ButtonStyle"

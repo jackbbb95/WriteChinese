@@ -73,13 +73,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|bottom"
+                android:gravity="center_vertical"
                 android:text="@string/swipe_change_characters"
                 android:textColor="@android:color/secondary_text_dark"
-                android:paddingRight="@dimen/general_8dp"
-                android:paddingEnd="@dimen/general_8dp"
-                android:paddingLeft="@dimen/general_8dp"
-                android:paddingStart="@dimen/general_8dp"
-                android:paddingBottom="@dimen/general_8dp" />
+                android:layout_margin="@dimen/general_8dp"/>
 
             <TextView
                 android:id="@+id/char_count"
@@ -104,7 +101,6 @@
         android:background="@color/colorDivider"/>
 
     <me.panavtec.drawableview.DrawableView
-        android:layout_marginTop="?actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/drawable_view">

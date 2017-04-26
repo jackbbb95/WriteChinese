@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "838274815764",
+    "project_id": "write-chinese"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838274815764:android:4bc954718a1a34e4",
+        "android_client_info": {
+          "package_name": "com.globe.jackbbb95.characters"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeX44KFLwP26PnSRQlonGSPYH08T9h4gA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-98173018-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838274815764:android:69f3578b27f77c3b",
+        "android_client_info": {
+          "package_name": "com.globe.jackbbb95.writechinese"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeX44KFLwP26PnSRQlonGSPYH08T9h4gA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-98173018-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

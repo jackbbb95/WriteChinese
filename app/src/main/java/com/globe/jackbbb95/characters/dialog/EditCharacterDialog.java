@@ -20,11 +20,11 @@ import android.widget.Toast;
 
 import com.github.stuxuhai.jpinyin.PinyinFormat;
 import com.github.stuxuhai.jpinyin.PinyinHelper;
-import com.globe.jackbbb95.characters.view.fragment.CategoryListFragment;
-import com.globe.jackbbb95.characters.view.fragment.CharacterGridFragment;
+import com.globe.jackbbb95.characters.R;
 import com.globe.jackbbb95.characters.model.CategoryObject;
 import com.globe.jackbbb95.characters.model.CharacterObject;
-import com.globe.jackbbb95.characters.R;
+import com.globe.jackbbb95.characters.view.fragment.CategoryListFragment;
+import com.globe.jackbbb95.characters.view.fragment.CharacterGridFragment;
 
 import java.util.ArrayList;
 

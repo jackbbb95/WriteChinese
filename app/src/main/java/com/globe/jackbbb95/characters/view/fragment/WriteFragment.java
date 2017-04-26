@@ -5,9 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Point;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.view.Display;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
@@ -16,62 +14,88 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.globe.jackbbb95.characters.R;
 import com.globe.jackbbb95.characters.model.CategoryObject;
 import com.globe.jackbbb95.characters.model.CharacterObject;
-import com.globe.jackbbb95.characters.R;
-import com.globe.jackbbb95.characters.view.fragment.CategoryListFragment;
 
 import java.util.ArrayList;
 
 import me.panavtec.drawableview.DrawableView;
 import me.panavtec.drawableview.DrawableViewConfig;
 
-public class WriteFragment extends Fragment {
+public class WriteFragment extends BaseFragment {
 
     //custom canvas view
     private static DrawableView drawableView;
     private static DrawableViewConfig config;
-    private static int PEN_SIZE = 10;
+    private static int PEN_SIZE = 15;
+    private static boolean SHOW_CHAR = true;
+    private static boolean SHOW_PINYIN = true;
+    private static boolean SHOW_DEF = true;
 
     private CharacterObject currChar;
     private int charIndex;
     private int swipeCount;
 
-    public static DrawableView getDrawableView(){return drawableView;}
+    public DrawableView getDrawableView(){return drawableView;}
     public static DrawableViewConfig getConfig(){return config;}
+
     public static int getPenSize(){return PEN_SIZE;}
     public static void setPenSize(int newSize){PEN_SIZE = newSize;}
+    public static boolean getShowChar(){return SHOW_CHAR;}
+    public static boolean getShowPinyin(){return SHOW_PINYIN;}
+    public static boolean getShowDef(){return SHOW_DEF;}
+    public int getCharIndex(){return charIndex;}
 
     public WriteFragment() {}
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView;
+        SharedPreferences prefs = getActivity().getSharedPreferences("pen_prefs", Activity.MODE_PRIVATE);
+        PEN_SIZE = prefs.getInt("PEN_SIZE",10);
+        SHOW_CHAR = prefs.getBoolean("SHOW_CHAR",true);
+        SHOW_PINYIN = prefs.getBoolean("SHOW_PINYIN",true);
+        SHOW_DEF = prefs.getBoolean("SHOW_DEF",true);
+
         //if this activity is entered through the practice mode button
-        if(getActivity().getIntent().getBooleanExtra("PracticeBoolean",false))
+        if(getArguments().getBoolean("PracticeBoolean",false))
             rootView = inflater.inflate(R.layout.fragment_practice,container,false);
         else {
             rootView = inflater.inflate(R.layout.fragment_write, container, false);
 
-            charIndex = getActivity().getIntent().getIntExtra("CharacterIndex",-1);
+            charIndex = getArguments().getInt("CharacterIndex",-1);
             ArrayList<CategoryObject> list = CategoryListFragment.getCategoryList();
-            final CategoryObject category = list.get(getActivity().getIntent().getIntExtra("CategoryIndex", -1));
+            final CategoryObject category = list.get(getArguments().getInt("CategoryIndex", -1));
+
             currChar = category.getCharacters().get(charIndex);
+
             //character
             final TextView characterTV = (TextView) rootView.findViewById(R.id.write_act_char_tv);
-            characterTV.setText(currChar.getHanyuCharacters());
+            if(SHOW_CHAR)
+                characterTV.setText(currChar.getHanyuCharacters());
+            else
+                characterTV.setVisibility(View.INVISIBLE);
+
             //pinyin
             final TextView pinyinTV = (TextView) rootView.findViewById(R.id.write_act_pinyin_tv);
-            pinyinTV.setText(currChar.getPinyin());
+            if(SHOW_PINYIN)
+                pinyinTV.setText(currChar.getPinyin());
+            else
+                pinyinTV.setVisibility(View.INVISIBLE);
+
             //definition
             final TextView definition = (TextView) rootView.findViewById(R.id.definition);
-            definition.setText(currChar.getDefinition());
+            if(SHOW_DEF)
+                definition.setText(currChar.getDefinition());
+            else
+                definition.setVisibility(View.INVISIBLE);
+
             //Swipe Text
             final TextView swipeText = (TextView) rootView.findViewById(R.id.swipe_text);
+
             //Character Count
             final TextView characterCount = (TextView) rootView.findViewById(R.id.char_count);
             String charCountText = "(" + String.valueOf(charIndex + 1) + "/" + String.valueOf(category.getCharacters().size()) + ")";
@@ -117,8 +141,8 @@ public class WriteFragment extends Fragment {
 
 
         }
-        SharedPreferences prefs = getActivity().getSharedPreferences("pen_prefs", Activity.MODE_PRIVATE);
-        PEN_SIZE = prefs.getInt("PEN_SIZE",10);
+
+
 
         //Setup Drawing Surface
         WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
@@ -140,11 +164,11 @@ public class WriteFragment extends Fragment {
     }
 
     //class that handles the swipes of the top card that switches between characters
-    class OnSwipeTouchListener implements View.OnTouchListener {
+    private class OnSwipeTouchListener implements View.OnTouchListener {
 
         private final GestureDetector gestureDetector;
 
-        public OnSwipeTouchListener(Context context) {
+        private OnSwipeTouchListener(Context context) {
             gestureDetector = new GestureDetector(context, new GestureListener());
         }
 

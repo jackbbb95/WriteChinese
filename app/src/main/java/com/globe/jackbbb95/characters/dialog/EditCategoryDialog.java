@@ -15,9 +15,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.globe.jackbbb95.characters.view.fragment.CategoryListFragment;
-import com.globe.jackbbb95.characters.model.CategoryObject;
 import com.globe.jackbbb95.characters.R;
+import com.globe.jackbbb95.characters.model.CategoryObject;
+import com.globe.jackbbb95.characters.view.fragment.CategoryListFragment;
 
 import java.util.ArrayList;
 

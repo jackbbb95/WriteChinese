@@ -1,10 +1,10 @@
 package com.globe.jackbbb95.characters.dialog;
 
-import android.os.Handler;
-import android.support.v4.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.TextInputLayout;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -21,12 +21,12 @@ import android.widget.Toast;
 
 import com.github.stuxuhai.jpinyin.PinyinFormat;
 import com.github.stuxuhai.jpinyin.PinyinHelper;
+import com.globe.jackbbb95.characters.R;
+import com.globe.jackbbb95.characters.model.CategoryObject;
+import com.globe.jackbbb95.characters.model.CharacterObject;
 import com.globe.jackbbb95.characters.view.activity.CharacterGridActivity;
 import com.globe.jackbbb95.characters.view.fragment.CategoryListFragment;
 import com.globe.jackbbb95.characters.view.fragment.CharacterGridFragment;
-import com.globe.jackbbb95.characters.model.CategoryObject;
-import com.globe.jackbbb95.characters.model.CharacterObject;
-import com.globe.jackbbb95.characters.R;
 
 import java.util.ArrayList;
 
